@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.SeparatorMenuItem?>
+<?import javafx.scene.control.Slider?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<?import javafx.scene.control.ScrollPane?>
+<VBox id="vBox" prefHeight="400.0" prefWidth="500.0" xmlns="http://javafx.com/javafx/17"
+      xmlns:fx="http://javafx.com/fxml/1" fx:controller="de.rabitem.evaluationtool.Controller">
+    <MenuBar id="menubar" VBox.vgrow="NEVER">
+        <Menu id="menubarFile" mnemonicParsing="false" text="File">
+            <MenuItem mnemonicParsing="false" text="Open…" onAction="#onLoadConfig"/>
+            <SeparatorMenuItem mnemonicParsing="false"/>
+            <MenuItem mnemonicParsing="false" text="Save" onAction="#onSaveConfig"/>
+            <SeparatorMenuItem mnemonicParsing="false"/>
+            <MenuItem mnemonicParsing="false" text="New" onAction="#onNewApplication"/>
+            <SeparatorMenuItem mnemonicParsing="false"/>
+            <MenuItem mnemonicParsing="false" text="Delete" onAction="#onDelete"/>
+            <SeparatorMenuItem mnemonicParsing="false"/>
+            <MenuItem mnemonicParsing="false" text="Quit" fx:id="quit" onAction="#onQuit"/>
+        </Menu>
+        <Menu fx:id="menubarApplications" mnemonicParsing="false" text="Applications">
+        </Menu>
+    </MenuBar>
+    <AnchorPane VBox.vgrow="ALWAYS">
+        <ScrollPane hbarPolicy="NEVER" prefHeight="575.0" prefWidth="500">
+            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="575.0" prefWidth="485.0">
+                <Label fx:id="labelApplicationName" layoutX="165.0" layoutY="27.0"
+                       text="Click File --> New to start..."
+                       underline="true">
+                    <font>
+                        <Font size="20.0"/>
+                    </font>
+                </Label>
+                <AnchorPane VBox.vgrow="ALWAYS" fx:id="anchorPaneContent">
+                    <Label fx:id="average" layoutX="200" layoutY="60" text="Average:-">
+                    </Label>
+                    <Slider fx:id="sliderAufgabenangemessenheit" blockIncrement="1"
+                            layoutX="251.0"
+                            layoutY="110.0" max="10.0" min="1.0" prefHeight="16.0"
+                            prefWidth="179.0"
+                            showTickLabels="true" showTickMarks="true" value="1.0"
+                            majorTickUnit="1"
+                            minorTickCount="0"
+                    />
+                    <TextField fx:id="textboxAufgabenangemessenheit"
+                               accessibleHelp="This field is used to provide extra information"
+                               layoutX="25.0" layoutY="110.0" prefHeight="26.0"
+                               prefWidth="201.0"/>
+                    <Label fx:id="labelAufgabenangemessenheit" layoutX="25.0" layoutY="80.0"
+                           text="Aufgabenangemessenheit"/>
+
+                    <Slider fx:id="sliderSelbstbeschreibungsfaehigkeit" blockIncrement="1.0"
+                            layoutX="251.0" layoutY="180.0" max="10.0" min="1.0"
+                            prefHeight="16.0"
+                            prefWidth="179.0" showTickLabels="true" showTickMarks="true"
+                            value="1.0"
+                            majorTickUnit="1"
+                            minorTickCount="0"
+                    />
+                    <TextField fx:id="textboxSelbstbeschreibungsfaehigkeit"
+                               accessibleHelp="This field is used to provide extra informationThis field is used to provide extra information"
+                               layoutX="25.0" layoutY="180.0" prefHeight="26.0"
+                               prefWidth="201.0"/>
+                    <Label fx:id="labelSelbstbeschreibungsfaehigkeit" layoutX="25.0"
+                           layoutY="150.0"
+                           text="Selbstbeschreibungsfähigkeit"/>
+
+                    <Slider fx:id="sliderSteuerbarkeit" blockIncrement="1.0" layoutX="251.0"
+                            layoutY="250.0" max="10.0" min="1.0" prefHeight="16.0"
+                            prefWidth="179.0"
+                            showTickLabels="true" showTickMarks="true" value="1.0"
+                            majorTickUnit="1"
+                            minorTickCount="0"
+                    />
+                    <TextField fx:id="textboxSteuerbarkeit"
+                               accessibleHelp="This field is used to provide extra informationThis field is used to provide extra information"
+                               layoutX="25.0" layoutY="250.0" prefHeight="26.0"
+                               prefWidth="201.0"/>
+                    <Label fx:id="labelSteuerbarkeit" layoutX="25.0" layoutY="220.0"
+                           text="Steuerbarkeit"/>
+
+                    <Slider fx:id="sliderErwartungskonformitaet" blockIncrement="1.0"
+                            layoutX="251.0"
+                            layoutY="320.0" max="10.0" min="1.0" prefHeight="16.0"
+                            prefWidth="179.0"
+                            showTickLabels="true" showTickMarks="true" value="1.0"
+                            majorTickUnit="1"
+                            minorTickCount="0"
+                    />
+                    <TextField fx:id="textboxErwartungskonformitaet"
+                               accessibleHelp="This field is used to provide extra informationThis field is used to provide extra information"
+                               layoutX="25.0" layoutY="320.0" prefHeight="26.0"
+                               prefWidth="201.0"/>
+                    <Label fx:id="labelErwartungskonformitaet" layoutX="25.0" layoutY="290.0"
+                           text="Erwartungskonformität"/>
+
+                    <Slider fx:id="sliderFehlertoleranz" blockIncrement="1.0" layoutX="251.0"
+                            layoutY="390.0" max="10.0" min="1.0" prefHeight="16.0"
+                            prefWidth="179.0"
+                            showTickLabels="true" showTickMarks="true" value="1.0"
+                            majorTickUnit="1"
+                            minorTickCount="0"
+                    />
+                    <TextField fx:id="textboxFehlertoleranz"
+                               accessibleHelp="This field is used to provide extra informationThis field is used to provide extra information"
+                               layoutX="25.0" layoutY="390.0" prefHeight="26.0"
+                               prefWidth="201.0"/>
+                    <Label fx:id="labelFehlertoleranz" layoutX="25.0" layoutY="360.0"
+                           text="Fehlertoleranz"/>
+
+                    <Slider fx:id="sliderIndividualisierbarkeit" blockIncrement="1.0"
+                            layoutX="251.0"
+                            layoutY="460.0" max="10.0" min="1.0" prefHeight="16.0"
+                            prefWidth="179.0"
+                            showTickLabels="true" showTickMarks="true" value="1.0"
+                            majorTickUnit="1"
+                            minorTickCount="0"
+                    />
+                    <TextField fx:id="textboxIndividualisierbarkeit"
+                               accessibleHelp="This field is used to provide extra informationThis field is used to provide extra information"
+                               layoutX="25.0" layoutY="460.0" prefHeight="26.0"
+                               prefWidth="201.0"/>
+                    <Label fx:id="labelIndividualisierbarkeit" layoutX="25.0" layoutY="430.0"
+                           text="Individualisierbarkeit"/>
+
+                    <Slider fx:id="sliderLernfoerderlichkeit" blockIncrement="1.0"
+                            layoutX="251.0"
+                            layoutY="530.0" max="10.0" min="1.0" prefHeight="16.0"
+                            prefWidth="179.0"
+                            showTickLabels="true" showTickMarks="true" value="1.0"
+                            majorTickUnit="1"
+                            minorTickCount="0"
+                    />
+                    <TextField fx:id="textboxLernfoerderlichkeit"
+                               accessibleHelp="This field is used to provide extra informationThis field is used to provide extra information"
+                               layoutX="25.0" layoutY="530.0" prefHeight="26.0"
+                               prefWidth="201.0"/>
+                    <Label fx:id="labelLernfoerderlichkeit" layoutX="25.0" layoutY="500.0"
+                           text="Lernförderlichkeit"/>
+
+                </AnchorPane>
+            </AnchorPane>
+        </ScrollPane>
+    </AnchorPane>
+</VBox>

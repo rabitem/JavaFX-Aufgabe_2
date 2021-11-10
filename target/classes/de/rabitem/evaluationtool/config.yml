@@ -1,0 +1,24 @@
+author: "system"
+items:
+- name: "sample"
+  aufgabenangemessenheit:
+    value: 6.0
+    comment: ""
+  selbstbeschreibungsfaehigkeit:
+    value: 0.0
+    comment: ""
+  steuerbarkeit:
+    value: 0.0
+    comment: ""
+  erwartungskonformitaet:
+    value: 0.0
+    comment: ""
+  fehlertoleranz:
+    value: 0.0
+    comment: ""
+  individualisierbarkeit:
+    value: 0.0
+    comment: ""
+  lernfoerderlichkeit:
+    value: 0.0
+    comment: ""
